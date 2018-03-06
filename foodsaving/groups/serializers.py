@@ -54,7 +54,7 @@ class GroupDetailSerializer(serializers.ModelSerializer):
             'password',
             'timezone',
             'active_agreement',
-            'active',
+            'status',
             'notification_types',
         ]
         extra_kwargs = {
@@ -132,7 +132,7 @@ class AgreementSerializer(serializers.ModelSerializer):
             'title',
             'content',
             'group',
-            'agreed'
+            'agreed',
         ]
         extra_kwargs = {
             'agreed': {
@@ -198,7 +198,8 @@ class GroupPreviewSerializer(serializers.ModelSerializer):
             'latitude',
             'longitude',
             'members',
-            'protected'
+            'protected',
+            'status',
         ]
 
     protected = serializers.SerializerMethodField()
